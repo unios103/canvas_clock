@@ -14,10 +14,10 @@ html{
     border:1.5px solid #cef5f0;
 }
 .remainder{
-    width:20vw;
+    width:30vw;
 }
 .memo,.card,.page_title{
-    width : 75vw;
+    width : 65vw;
     margin-left:3.8px;
 }
 .memo,.card{
