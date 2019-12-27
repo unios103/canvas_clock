@@ -1,0 +1,34 @@
+html{
+    -webkit-app-region: drag; /* ドラッグ可能に */
+    -webkit-user-select: none; /* ドラッグはテキスト選択と競合するので禁止 */
+    height: 100vh;
+}
+.day{
+    display:flex;
+    padding:3vh;
+}
+.remainder,.page{
+    height:93vh;
+}
+.remainder,.memo,.card,.page_title{
+    border:1.5px solid #cef5f0;
+}
+.remainder{
+    width:20vw;
+}
+.memo,.card,.page_title{
+    width : 75vw;
+    margin-left:3.8px;
+}
+.memo,.card{
+    margin-bottom:3.8px;
+}
+.memo{
+    height: 40%;
+}
+.card{
+    height:42.5%;
+}
+.page_title{
+    height: 15%;
+}
