@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import CheckBox from './CheckBox.jsx'
-
 const List=(props)=>{
     const [checkbox,change_box]=React.useState(false);
 
