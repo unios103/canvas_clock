@@ -3,9 +3,6 @@ import React, { Component } from 'react';
 import Form from './Form.jsx';
 import List from './List.jsx';
 
-import './../css/rCss.css';
-import './../css/main.css';
-
 export default class Flame extends Component{
     constructor(props){
         super(props);

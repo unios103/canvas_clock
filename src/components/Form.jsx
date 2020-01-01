@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 
-import './../css/rCss.css';
-import './../css/main.css';
-
 const Form = (props) => (
     <form className="form_field" onSubmit={props.handleAdd}>
         <label className="form_label form_color">todo </label>

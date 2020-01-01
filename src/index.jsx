@@ -9,9 +9,11 @@ library.add(fab, fas, far);
 //jsx file
 import Flame from './components/Flame.jsx'
 //css file
-import './css/font.css';
+import './css/Font.css';
 import './css/rCss.css';
-import './css/main.css';
+import './css/Tag.css'
+import './css/Main.css';
+import './css/Form_List.css';
 
 class App extends React.Component {
 
