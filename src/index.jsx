@@ -1,22 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-import './css/main.css';
+//fontawesome
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { far } from '@fortawesome/free-regular-svg-icons';
+library.add(fab, fas, far);
+//jsx file
+import Flame from './components/Flame.jsx'
+//css file
+import './css/font.css';
 import './css/rCss.css';
+import './css/main.css';
 
 class App extends React.Component {
+
   render() {
     return (
       <div className="day">
-        <div className="remainder"></div>
-          <div className="page">
-            <div className="memo"></div>
-            <div className="card"></div>
-            <div className="page_title"></div>
-          </div>
+        <div className="remainder title"></div>
+        <div className="page title">
+        <div className="memo title"></div>
+        <div className="card title">
+          <Flame />
+        </div>
+          <div className="page_title title"></div>
+        </div>
       </div>
     );
   }
 }
 
-ReactDOM.render(<App/>, document.querySelector('#app'));
+ReactDOM.render(<App />, document.querySelector('#app'));
