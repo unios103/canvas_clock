@@ -9,19 +9,29 @@ export default class Flame extends Component{
         this.state={
             todo:[]
         };
-        this.handleAdd=this.handleAdd.bind(this);
+        this.AddTodo=this.AddTodo.bind(this);
+        this.RemoveTodo=this.RemoveTodo.bind(this);
     }
 
-    handleAdd(e){
+    AddTodo(e){
         e.preventDefault();
-        console.log(e.target.title.value);
+        const {todo}=this.state;
+        todo.push({title:e.target.title.value});
+        this.setState({todo});
+        e.target.title.value='';
+    }
+
+    RemoveTodo(i){
+        const {todo}=this.state;
+        todo.splice(i,1);
+        this.setState({todo});
     }
 
     render(){
         return(
             <div className="flame title">
-                <Form handleAdd={this.handleAdd} />
-                <List />
+                <Form AddTodo={this.AddTodo} />
+                <List todos={this.state.todo} RemoveTodo={this.RemoveTodo} />
             </div>
         )
     }

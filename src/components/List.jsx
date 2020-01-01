@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-function List(){
+import CheckBox from './CheckBox.jsx'
+
+const List=(props)=>{
     const [checkbox,change_box]=React.useState(false);
 
     function Check(e){
@@ -16,12 +18,10 @@ function List(){
     return(
         <div className="list_box">
             <ul>
-                <li className="list"><span className="form_btn checkbox" onClick={Check}>{Box(checkbox)}</span>
-                    Item 1<span className="form_btn trash"><FontAwesomeIcon icon={['fas', 'trash']} /></span></li>
-                <li className="list"><span className="form_btn checkbox" onClick={Check}>{Box(checkbox)}</span>
-                    Item 2<span className="form_btn trash"><FontAwesomeIcon icon={['fas', 'trash']} /></span></li>
-                <li className="list"><span className="form_btn checkbox" onClick={Check}>{Box(checkbox)}</span>
-                    Item 3<span className="form_btn trash"><FontAwesomeIcon icon={['fas', 'trash']} /></span></li>
+                {props.todos.map((todo,i)=>{
+                    return (<li key={i} className="list"><span className="form_btn checkbox" onClick={Check}>{Box(checkbox)}</span>
+                    {todo.title}<span className="form_btn trash" onClick={()=>props.RemoveTodo(i)}><FontAwesomeIcon icon={['fas', 'trash']} /></span></li>);
+                })}
             </ul>
         </div>
     );
