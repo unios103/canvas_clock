@@ -1,5 +1,5 @@
 .title{
-    font-family: 'Poiret One', 'M+ Type-2 (general-j) Light', cursive;
+    font-family: 'Poiret One', 'M+ Type-2 (general-j) Thin', cursive;
     color:#00b8d8;
 }
 .day{
@@ -37,4 +37,8 @@
     margin:2.5%;
     border:1px solid #d1d1d1;
     text-align: center;
+}
+.todoBox{
+    height:88%;
+    overflow:scroll;
 }

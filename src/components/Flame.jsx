@@ -21,8 +21,6 @@ export default class Flame extends Component{
         todo.push({title:e.target.title.value});
         check.push({status:false});
         this.setState({todo,check});
-        console.log(this.state);//
-        console.log(this.state.todo,this.state.check);//
         e.target.title.value='';
     }
 
@@ -37,14 +35,15 @@ export default class Flame extends Component{
         const {check}=this.state;
         check[i].status=!check[i].status;
         this.setState({check});
-        console.log(check[i].status);//
     }
 
     render(){
         return(
             <div className="flame title">
                 <Form AddTodo={this.AddTodo} />
-                <List todos={this.state.todo} sta={this.state.check} RemoveTodo={this.RemoveTodo} Check={this.Check} />
+                <div className="todoBox">
+                    <List todos={this.state.todo} sta={this.state.check} RemoveTodo={this.RemoveTodo} Check={this.Check} />
+                </div>
             </div>
         )
     }

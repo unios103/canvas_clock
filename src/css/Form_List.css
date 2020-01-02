@@ -1,10 +1,11 @@
 .form_field{
     display: inline-block;
-    margin-top:3px;
+    padding:4px;
+    border-bottom:1px solid #e2e2e2;
 }
 .list_box{
     margin:4px;
-    border-bottom:1px solid #e2e2e2;
+    margin-top: 0;
 }
 .form_btn{
     cursor:pointer;
@@ -12,10 +13,19 @@
     margin:0px 4px;
 }
 .list{
-    border-top:1px solid #e2e2e2;
+    border-bottom:1px solid #e2e2e2;
     padding:3px;
     text-align: left;
+    display:flex;
+    align-items: flex-start;
 }
 .trash{
     float: right;
+}
+.todo_title{
+    width:75%;
+    max-height: 33px;
+    overflow:scroll;
+    display: inline-block;
+    overflow-wrap: break-word;
 }
