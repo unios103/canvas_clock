@@ -19,7 +19,6 @@ export default class Flame extends Component{
         const {todo}=this.state;
         todo.push({title:e.target.title.value,status:false,contents:""});
         this.setState({todo});
-        console.log(this.state.todo);//
         e.target.title.value='';
     }
 
@@ -33,7 +32,6 @@ export default class Flame extends Component{
         const {todo}=this.state;
         todo[i].status=!todo[i].status;
         this.setState({todo});
-        console.log(this.state.todo[i].status);
     }
 
     render(){
