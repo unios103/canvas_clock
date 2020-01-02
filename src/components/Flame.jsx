@@ -7,8 +7,7 @@ export default class Flame extends Component{
     constructor(props){
         super(props);
         this.state={
-            todo:[],
-            check:[]
+            todo:[]
         };
         this.AddTodo=this.AddTodo.bind(this);
         this.RemoveTodo=this.RemoveTodo.bind(this);
@@ -17,24 +16,24 @@ export default class Flame extends Component{
 
     AddTodo(e){
         e.preventDefault();
-        const {todo,check}=this.state;
-        todo.push({title:e.target.title.value});
-        check.push({status:false});
-        this.setState({todo,check});
+        const {todo}=this.state;
+        todo.push({title:e.target.title.value,status:false,contents:""});
+        this.setState({todo});
+        console.log(this.state.todo);//
         e.target.title.value='';
     }
 
     RemoveTodo(i){
-        const {todo,check}=this.state;
+        const {todo}=this.state;
         todo.splice(i,1);
-        check.splice(i,1);
-        this.setState({todo,check});
+        this.setState({todo});
     }
 
     Check(i){
-        const {check}=this.state;
-        check[i].status=!check[i].status;
-        this.setState({check});
+        const {todo}=this.state;
+        todo[i].status=!todo[i].status;
+        this.setState({todo});
+        console.log(this.state.todo[i].status);
     }
 
     render(){
@@ -42,7 +41,7 @@ export default class Flame extends Component{
             <div className="flame title">
                 <Form AddTodo={this.AddTodo} />
                 <div className="todoBox">
-                    <List todos={this.state.todo} sta={this.state.check} RemoveTodo={this.RemoveTodo} Check={this.Check} />
+                    <List todos={this.state.todo} RemoveTodo={this.RemoveTodo} Check={this.Check} />
                 </div>
             </div>
         )
