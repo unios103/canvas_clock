@@ -13,7 +13,7 @@ function createWindow() {
     mainWindow.loadFile('./dist/index.html');
 
     // デベロッパーツールの起動
-    mainWindow.webContents.openDevTools();
+    //mainWindow.webContents.openDevTools();
 
     // メインウィンドウが閉じられたときの処理
     mainWindow.on('closed', () => {

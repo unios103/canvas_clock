@@ -1,16 +1,23 @@
 import React, { Component } from 'react';
 
 const Memo=(props)=>{
-    function Check(e){
-        e.preventDefault();
-        const {todo}=props.this.state;
-        todo[0].status=!todo[0].status;
-        props.this.setState({todo});
-        console.log(todo[0].status);
-    }
+
+    const [check,state_check]=React.useState(false);
+
+    // function Check(e){
+    //     e.preventDefault();
+    //     const {todo}=props.this.state;
+    //     todo[0].status=!todo[0].status;
+    //     props.this.setState({todo});
+    //     console.log(todo[0].status);
+    // }
 
     return(
-        <div className="memo_box" onClick={Check}>@</div>
+        <div className="memo_field" onClick={e=>{state_check(!check)}}>
+            {props.this.state.todo.map((todo,i)=>{
+                return (todo.status ? <div key={i} className="memo_flame"><span className="memo_todo">todo</span><span class="memo_title">{todo.title}</span></div> : "");
+            })}
+        </div>
     )
 }
 export default Memo;

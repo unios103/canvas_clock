@@ -7,24 +7,35 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 library.add(fab, fas, far);
 //jsx file
-import Flame from './components/Flame.jsx'
+import Flame from './components/card/Flame.jsx'
+import Memo from './components/memo/Memo.jsx'
 //css file
 import './css/Font.css';
 import './css/rCss.css';
 import './css/Tag.css'
 import './css/Main.css';
+import './css/Memo.css';
 import './css/Form_List.css';
 
 class App extends React.Component {
+
+  constructor(props){
+    super(props);
+    this.state={
+        todo:[]
+    };
+  }
 
   render() {
     return (
       <div className="day">
         <div className="remainder title"></div>
         <div className="page title">
-        <div className="memo title"></div>
+        <div className="memo title">
+          <Memo this={this} />
+        </div>
         <div className="card title">
-          <Flame />
+          <Flame　this={this} />
         </div>
           <div className="page_title title"></div>
         </div>

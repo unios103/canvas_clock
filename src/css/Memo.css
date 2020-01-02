@@ -1,0 +1,20 @@
+.memo_field{
+    height: 100%;
+    overflow:scroll;
+}
+.memo_flame{
+    height:88%;
+    width:40%;
+    margin:2.5%;
+    border:1px solid #d1d1d1;
+    text-align: center;
+    box-shadow: 0 0 3px #d1d1d1;
+}
+.memo_todo{
+    padding:4px;
+    float: left;
+}
+.memo_title{
+    padding:4px;
+    text-align: center;
+}
