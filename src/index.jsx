@@ -14,8 +14,8 @@ import './css/Font.css';
 import './css/rCss.css';
 import './css/Tag.css'
 import './css/Main.css';
-import './css/Memo.css';
 import './css/Form_List.css';
+import './css/Memo.css';
 
 class App extends React.Component {
 

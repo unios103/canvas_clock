@@ -11,10 +11,21 @@
     box-shadow: 0 0 3px #d1d1d1;
 }
 .memo_todo{
-    padding:4px;
+    border-bottom:1px solid #00b8d8;
+    width:96%;
+    display: inline-block;
+}
+.todo_todo{
+    padding:4px 4px 0px;
     float: left;
 }
 .memo_title{
-    padding:4px;
-    text-align: center;
+    display: inline-block;
+    width:70%;
+    height:15px;
+    overflow: scroll;
+    overflow-wrap : break-word;
+    padding:4px 4px 0px;
+    float: right;
+    text-align: right;
 }

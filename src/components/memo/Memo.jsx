@@ -15,7 +15,7 @@ const Memo=(props)=>{
     return(
         <div className="memo_field" onClick={e=>{state_check(!check)}}>
             {props.this.state.todo.map((todo,i)=>{
-                return (todo.status ? <div key={i} className="memo_flame"><span className="memo_todo">todo</span><span class="memo_title">{todo.title}</span></div> : "");
+                return (todo.status ? <div key={i} className="memo_flame"><span className="memo_todo"><span className="todo_todo">todo</span><span className="memo_title">{todo.title}</span></span></div> : "");
             })}
         </div>
     )

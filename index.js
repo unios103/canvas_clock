@@ -5,8 +5,8 @@ const { app, BrowserWindow } = require('electron');
 let mainWindow;
 
 function createWindow() {
-    // メインウィンドウを作成します
-    mainWindow = new BrowserWindow({ titleBarStyle: 'hidden', width: 830, height: 600, webPreferences: { nodeIntegration: true } });
+    // メインウィンドウを作成します         //minとmaxの設定を有効にする
+    mainWindow = new BrowserWindow({ titleBarStyle: 'hidden', width: 830, height: 600,/*minWidth:830, maxWidth:830, minHeight:600, maxHeight:600,*/ webPreferences: { nodeIntegration: true } });
 
     // メインウィンドウに表示するURLを指定します
     // （今回はmain.jsと同じディレクトリのindex.html）
