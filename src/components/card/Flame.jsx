@@ -8,7 +8,7 @@ const Flame=(props)=>{
     function AddTodo(e){
         e.preventDefault();
         const {todo}=props.this.state;
-        todo.push({title:e.target.title.value,status:false,contents:""});
+        todo.push({title:e.target.title.value,status:false,edit:false,contents:""});
         props.this.setState({todo});
         e.target.title.value='';
     }
