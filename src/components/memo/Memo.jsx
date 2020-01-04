@@ -24,9 +24,9 @@ const Memo=(props)=>{
         const {todo}=props.this.state;
         return (
             <div className="edit">
-                <span className="form_btn edit_btn" onClick={()=>Edit(i)}>{EditButton(todo[i].edit)}</span>
                 {props.this.state.todo[i].edit ? <textarea className="edit_now" defaultValue={contents} onChange={(e)=>EditContents(i,e)} rows="10" cols="27" placeholder="Write a note here" /> :
                 contents!=""?<span className="memo_contents" style={{whiteSpace: 'pre-line'}}>{contents}</span> :<span className="memo_contents none">None</span>}
+                <span className="form_btn edit_btn" onClick={()=>Edit(i)}>{EditButton(todo[i].edit)}</span>
             </div>
         );
     }

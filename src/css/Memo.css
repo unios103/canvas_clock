@@ -32,21 +32,23 @@
 }
 .edit{
     text-align: left;
+    width:100%;
 }
 .edit_btn{
     font-size: 0.7rem;
     float: right;
 }
 .memo_contents{
-    margin:4px;
-    padding:8px;
+    font-size:0.9rem;
+    float: left;
+    margin:3px;
+    margin-left: 8px;
+    width:84%;
 }
 .none{
-    margin: 3px;
     color: #d1d1d1;
 }
 .edit_now{
     margin-top: 3px;
     margin-left:6px;
-    padding:3px;
 }
