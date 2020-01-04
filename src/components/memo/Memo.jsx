@@ -13,14 +13,20 @@ const Memo=(props)=>{
         return edit ?  <FontAwesomeIcon icon={['fas', 'check']} /> : <FontAwesomeIcon icon={['fas', 'edit']} />;
     }
 
+    function EditContents(i,e){
+        const {todo}=props.this.state;
+        todo[i].contents=e.target.value;
+        props.this.setState({todo});
+    }
+
     function Contents(i){
         const {contents}=props.this.state.todo[i];
         const {todo}=props.this.state;
         return (
             <div className="edit">
-                {props.this.state.todo[i].edit ? <span className="memo_contents">Edit now</span> :
-                contents!=""? <span className="memo_contents">{contents}</span> : <span className="memo_contents none">None</span>}
                 <span className="form_btn edit_btn" onClick={()=>Edit(i)}>{EditButton(todo[i].edit)}</span>
+                {props.this.state.todo[i].edit ? <textarea className="edit_now" defaultValue={contents} onChange={(e)=>EditContents(i,e)} rows="10" cols="27" placeholder="Write a note here" /> :
+                contents!=""?<span className="memo_contents" style={{whiteSpace: 'pre-line'}}>{contents}</span> :<span className="memo_contents none">None</span>}
             </div>
         );
     }

@@ -42,5 +42,11 @@
     padding:8px;
 }
 .none{
+    margin: 3px;
     color: #d1d1d1;
+}
+.edit_now{
+    margin-top: 3px;
+    margin-left:6px;
+    padding:3px;
 }
