@@ -9,6 +9,7 @@
     border:1px solid #d1d1d1;
     text-align: center;
     box-shadow: 0 0 3px #d1d1d1;
+    -webkit-app-region: none;
 }
 .memo_todo{
     border-bottom:1px solid #00b8d8;
@@ -28,4 +29,18 @@
     padding:4px 4px 0px;
     float: right;
     text-align: right;
+}
+.edit{
+    text-align: left;
+}
+.edit_btn{
+    font-size: 0.7rem;
+    float: right;
+}
+.memo_contents{
+    margin:4px;
+    padding:8px;
+}
+.none{
+    color: #d1d1d1;
 }
