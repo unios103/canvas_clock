@@ -9,6 +9,7 @@ library.add(fab, fas, far);
 //jsx file
 import Flame from "./components/card/Flame.jsx";
 import Memo from "./components/memo/Memo.jsx";
+import Plus from "./components/card/Plus.jsx";
 //css file
 import "./css/Font.css";
 import "./css/rCss.css";
@@ -18,29 +19,34 @@ import "./css/Form_List.css";
 import "./css/Memo.css";
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      todo: []
-    };
-  }
+    constructor(props) {
+        super(props);
+        this.state = {
+            list: [{ todo: [] }, { todo: [] }]
+        };
+    }
 
-  render() {
-    return (
-      <div className="day">
-        <div className="remainder title"></div>
-        <div className="page title">
-          <div className="memo title">
-            <Memo this={this} />
-          </div>
-          <div className="card title">
-            <Flame this={this} />
-          </div>
-          <div className="page_title title"></div>
-        </div>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div className="day">
+                <div className="remainder title"></div>
+                <div className="page title">
+                    <div className="memo title">
+                        {this.state.list.map((list, i) => {
+                            return <Memo key={i} this={this} num={i} />;
+                        })}
+                    </div>
+                    <div className="card title">
+                        {this.state.list.map((list, i) => {
+                            return <Flame key={i} this={this} num={i} />;
+                        })}
+                        <Plus this={this} />
+                    </div>
+                    <div className="page_title title"></div>
+                </div>
+            </div>
+        );
+    }
 }
 
 ReactDOM.render(<App />, document.querySelector("#app"));

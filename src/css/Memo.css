@@ -1,54 +1,60 @@
-.memo_field{
-    height: 100%;
-    overflow:scroll;
+.memo_field {
+    display: flex;
+    flex-direction: column;
+    overflow-x: scroll;
+    width: 40%;
+    min-width: 40%;
+    margin: 2.5%;
 }
-.memo_flame{
-    height:88%;
-    width:40%;
-    margin:2.5%;
-    border:1px solid #d1d1d1;
+.memo_flame {
+    height: 99%;
+    width: 99%;
+    min-height: 99%;
+    min-width: 99%;
+    margin-bottom: 2%;
+    border: 1px solid #d1d1d1;
     text-align: center;
     box-shadow: 0 0 3px #d1d1d1;
     -webkit-app-region: none;
 }
-.memo_todo{
-    border-bottom:1px solid #00b8d8;
-    width:96%;
+.memo_todo {
+    border-bottom: 1px solid #00b8d8;
+    width: 96%;
     display: inline-block;
 }
-.todo_todo{
-    padding:4px 4px 0px;
+.todo_todo {
+    padding: 4px 4px 0px;
     float: left;
 }
-.memo_title{
+.memo_title {
     display: inline-block;
-    width:70%;
-    height:15px;
+    width: 70%;
+    height: 15px;
     overflow: scroll;
-    overflow-wrap : break-word;
-    padding:4px 4px 0px;
+    overflow-wrap: break-word;
+    padding: 4px 4px 0px;
     float: right;
     text-align: right;
 }
-.edit{
+.edit {
     text-align: left;
-    width:100%;
+    width: 100%;
 }
-.edit_btn{
+.edit_btn {
     font-size: 0.7rem;
     float: right;
 }
-.memo_contents{
-    font-size:0.9rem;
+.memo_contents {
+    font-size: 0.9rem;
     float: left;
-    margin:3px;
+    margin: 3px;
     margin-left: 8px;
-    width:84%;
+    width: 84%;
 }
-.none{
+.none {
     color: #d1d1d1;
 }
-.edit_now{
+.edit_now {
     margin-top: 3px;
-    margin-left:6px;
+    margin-left: 6px;
 }

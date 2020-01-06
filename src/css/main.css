@@ -1,46 +1,68 @@
-.title{
-    font-family: 'Poiret One', 'M+ Type-2 (general-j) Thin', cursive;
-    color:#00b8d8;
+.title {
+    font-family: "Poiret One", "M+ Type-2 (general-j) Thin", cursive;
+    color: #00b8d8;
 }
-.day{
-    display:flex;
-    padding:3vh;
+.day {
+    display: flex;
+    padding: 3vh;
 }
-.remainder,.page{
-    height:93vh;
+.remainder,
+.page {
+    height: 93vh;
 }
-.remainder,.memo,.card,.page_title{
-    border:1.5px solid #cef5f0;
+.remainder,
+.memo,
+.card,
+.page_title {
+    border: 1.5px solid #cef5f0;
 }
-.remainder{
-    width:30vw;
+.remainder {
+    width: 30vw;
 }
-.memo,.card,.page_title{
-    width : 65vw;
-    margin-left:3.8px;
+.memo,
+.card,
+.page_title {
+    width: 65vw;
+    margin-left: 3.8px;
 }
-.memo,.card{
-    margin-bottom:3.8px;
+.memo,
+.card {
+    margin-bottom: 3.8px;
 }
-.memo{
+.memo {
     height: 38.5%;
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
 }
-.card{
-    height:50%;
+.card {
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow-x: scroll;
 }
-.page_title{
+.page_title {
     height: 9%;
 }
-.flame{
-    height:90%;
-    width:40%;
-    margin:2.5%;
-    border:1px solid #d1d1d1;
+.flame {
+    height: 90%;
+    width: 40%;
+    margin: 2.5%;
+    border: 1px solid #d1d1d1;
     text-align: center;
     box-shadow: 0 0 3px #d1d1d1;
     -webkit-app-region: none;
+    min-width: 40%;
 }
-.todoBox{
-    height:88%;
-    overflow:scroll;
+.todoBox {
+    height: 88%;
+    overflow: scroll;
+}
+.Plus {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #d1d1d18e;
+    font-size: 2rem;
 }

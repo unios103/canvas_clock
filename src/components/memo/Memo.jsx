@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Memo = props => {
+    const num = props.num;
+
     function Edit(i) {
-        const { todo } = props.this.state;
+        const { todo } = props.this.state.list[num];
         todo[i].edit = !todo[i].edit;
         props.this.setState({ todo });
     }
@@ -17,17 +19,17 @@ const Memo = props => {
     }
 
     function EditContents(i, e) {
-        const { todo } = props.this.state;
+        const { todo } = props.this.state.list[num];
         todo[i].contents = e.target.value;
         props.this.setState({ todo });
     }
 
     function Contents(i) {
-        const { contents } = props.this.state.todo[i];
-        const { todo } = props.this.state;
+        const { contents } = props.this.state.list[num].todo[i];
+        const { todo } = props.this.state.list[num];
         return (
             <div className="edit">
-                {props.this.state.todo[i].edit ? (
+                {props.this.state.list[num].todo[i].edit ? (
                     <textarea
                         className="edit_now"
                         defaultValue={contents}
@@ -55,7 +57,7 @@ const Memo = props => {
 
     return (
         <div className="memo_field">
-            {props.this.state.todo.map((todo, i) => {
+            {props.this.state.list[num].todo.map((todo, i) => {
                 return todo.status ? (
                     <div key={i} className="memo_flame">
                         <span className="memo_todo">

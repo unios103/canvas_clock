@@ -18,14 +18,14 @@ const List = props => {
                         <li key={i} className="list">
                             <span
                                 className="form_btn checkbox"
-                                onClick={() => props.Check(i)}
+                                onClick={() => props.Check(i, props.num)}
                             >
                                 {Box(todo.status)}
                             </span>
                             <span className="todo_title">{todo.title}</span>
                             <span
                                 className="form_btn trash"
-                                onClick={() => props.RemoveTodo(i)}
+                                onClick={() => props.RemoveTodo(i, props.num)}
                             >
                                 <FontAwesomeIcon icon={["fas", "trash"]} />
                             </span>

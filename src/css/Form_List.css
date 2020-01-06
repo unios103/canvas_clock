@@ -1,31 +1,31 @@
-.form_field{
+.form_field {
     display: inline-block;
-    padding:4px;
-    border-bottom:1px solid #e2e2e2;
+    padding: 4px;
+    border-bottom: 1px solid #e2e2e2;
 }
-.list_box{
-    margin:4px;
+.list_box {
+    margin: 4px;
     margin-top: 0;
 }
-.form_btn{
-    cursor:pointer;
-    margin:0px;
-    margin:0px 4px;
+.form_btn {
+    cursor: pointer;
+    margin: 0px;
+    margin: 0px 4px;
 }
-.list{
-    border-bottom:1px solid #e2e2e2;
-    padding:3px;
+.list {
+    border-bottom: 1px solid #e2e2e2;
+    padding: 3px;
     text-align: left;
-    display:flex;
+    display: flex;
     align-items: flex-start;
 }
-.trash{
+.trash {
     float: right;
 }
-.todo_title{
-    width:75%;
+.todo_title {
+    width: 75%;
     max-height: 33px;
-    overflow:scroll;
+    overflow: scroll;
     display: inline-block;
     overflow-wrap: break-word;
 }
