@@ -34,7 +34,10 @@ const Flame = props => {
     return (
         <>
             <div className="flame title">
-                <Form AddTodo={AddTodo} />
+                <Form
+                    AddTodo={AddTodo}
+                    list_title={props.this.state.list[num].list_title}
+                />
                 <div className="todoBox">
                     <List
                         todo={props.this.state.list[num].todo}

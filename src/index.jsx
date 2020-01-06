@@ -22,7 +22,7 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            list: [{ todo: [] }, { todo: [] }]
+            list: [{ todo: [], list_title: "todo" }]
         };
     }
 
@@ -35,12 +35,15 @@ class App extends React.Component {
                         {this.state.list.map((list, i) => {
                             return <Memo key={i} this={this} num={i} />;
                         })}
+                        <p className="space">@</p>{" "}
+                        {/* スペースを作るための最終手段 */}
                     </div>
                     <div className="card title">
                         {this.state.list.map((list, i) => {
                             return <Flame key={i} this={this} num={i} />;
                         })}
                         <Plus this={this} />
+                        <p className="space">@</p>
                     </div>
                     <div className="page_title title"></div>
                 </div>

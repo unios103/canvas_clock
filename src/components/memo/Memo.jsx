@@ -35,7 +35,7 @@ const Memo = props => {
                         defaultValue={contents}
                         onChange={e => EditContents(i, e)}
                         rows="10"
-                        cols="27"
+                        cols="26"
                         placeholder="Write a note here"
                     />
                 ) : contents != "" ? (

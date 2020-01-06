@@ -66,3 +66,18 @@
     color: #d1d1d18e;
     font-size: 2rem;
 }
+.p_div {
+    margin: 4px;
+}
+.p_title {
+    height: 15px;
+    margin: 4px;
+}
+.p_span {
+    letter-spacing: 0.1rem;
+}
+.space {
+    width: 5px;
+    height: 98%;
+    color: #00000000;
+}

@@ -1,28 +1,36 @@
-html{
+html {
     -webkit-app-region: drag; /* ドラッグ可能に */
     -webkit-user-select: none; /* ドラッグはテキスト選択と競合するので禁止 */
     height: 100vh;
-    background-color:white;
+    background-color: white;
     box-sizing: border-box;
 }
-button, input, select, textarea {
-    font-family : inherit;
-    font-size   : 80%;
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+    font-size: 80%;
 }
-button, input, select{
+button,
+input,
+select {
     height: 90%;
 }
-input[type="text"],textarea{
-    color:#585858;
-    border:1px solid #d1d1d1;
-    border-radius:3px;
-    padding:1px;
+input[type="text"],
+textarea {
+    color: #585858;
+    border: 1px solid #d1d1d1;
+    border-radius: 3px;
+    padding: 1px;
 }
-input[type="text"]:focus,textarea:focus{
+input[type="text"]:focus,
+textarea:focus {
     box-shadow: 0px 0px 3px #d1d1d1;
 }
-input[type="submit"]{
-    border-radius:3px;
+input[type="submit"] {
+    color: #00b8d8;
+    border-radius: 3px;
     background: repeating-linear-gradient(
         -45deg,
         #e2e2e2,
