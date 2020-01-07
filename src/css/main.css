@@ -18,6 +18,9 @@
 }
 .remainder {
     width: 30vw;
+    display: flex;
+    flex-direction: column;
+    overflow-x: scroll;
 }
 .memo,
 .card,
@@ -80,4 +83,14 @@
     width: 5px;
     height: 98%;
     color: #00000000;
+}
+.remainder_field {
+    border: 1px solid #d1d1d1;
+    box-shadow: 0 0 3px #d1d1d1;
+    height: 12%;
+    min-height: 12%;
+    margin: 5px;
+}
+.Check_remainder {
+    margin: 5%;
 }

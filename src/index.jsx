@@ -10,6 +10,7 @@ library.add(fab, fas, far);
 import Flame from "./components/card/Flame.jsx";
 import Memo from "./components/memo/Memo.jsx";
 import Plus from "./components/card/Plus.jsx";
+import Remainder from "./components/remainder/Remainder.jsx";
 //css file
 import "./css/Font.css";
 import "./css/rCss.css";
@@ -29,7 +30,11 @@ class App extends React.Component {
     render() {
         return (
             <div className="day">
-                <div className="remainder title"></div>
+                <div className="remainder title">
+                    {this.state.list.map((list, i) => {
+                        return <Remainder this={this} num={i} />;
+                    })}
+                </div>
                 <div className="page title">
                     <div className="memo title">
                         {this.state.list.map((list, i) => {
