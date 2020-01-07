@@ -30,6 +30,7 @@ const Plus = props => {
                                 type="text"
                                 name="title"
                                 className="form_input p_title"
+                                maxlength="8"
                             />
                             <input
                                 type="submit"

@@ -61,7 +61,9 @@ const Memo = props => {
                 return todo.status ? (
                     <div key={i} className="memo_flame">
                         <span className="memo_todo">
-                            <span className="todo_todo">todo</span>
+                            <span className="todo_todo">
+                                {props.this.state.list[num].list_title}
+                            </span>
                             <span className="memo_title">{todo.title}</span>
                         </span>
                         {Contents(i)}
