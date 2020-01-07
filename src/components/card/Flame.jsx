@@ -31,11 +31,19 @@ const Flame = props => {
         props.this.setState({ todo });
     }
 
+    function delateCard(i) {
+        const { list } = props.this.state;
+        list.splice(i, 1);
+        props.this.setState({ list });
+    }
+
     return (
         <>
             <div className="flame title">
                 <Form
+                    num={num}
                     AddTodo={AddTodo}
+                    delateCard={delateCard}
                     list_title={props.this.state.list[num].list_title}
                 />
                 <div className="todoBox">

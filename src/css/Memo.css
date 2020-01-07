@@ -13,8 +13,8 @@
     min-width: 99%;
     margin-bottom: 2%;
     border: 1px solid #d1d1d1;
-    text-align: center;
     box-shadow: 0 0 3px #d1d1d1;
+    text-align: center;
     -webkit-app-region: none;
 }
 .memo_todo {
