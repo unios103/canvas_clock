@@ -1,9 +1,9 @@
-#TODO: webpackとかbabelを使うために必要↓
-yarn add webpack webpack-cli —dev
-yarn add @babel/core @babel/preset-env babel-loader —dev
-yarn add react react-dom
-yarn add @babel/preset-react --dev
+#webpackとかbabelを使うための環境構築をするとき（ただのメモ）↓
+$ yarn add webpack webpack-cli —dev
+$ yarn add @babel/core @babel/preset-env babel-loader —dev
+$ yarn add react react-dom
+$ yarn add @babel/preset-react --dev
 
-#TODO: 実行する時↓
-yarn build
-yarn electron .
+#実行する時↓
+$ yarn build
+$ yarn electron .
