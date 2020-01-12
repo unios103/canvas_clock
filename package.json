@@ -1,5 +1,5 @@
 {
-  "name": "dayList",
+  "name": "clock",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -13,7 +13,7 @@
     "babel-loader": "^8.0.6",
     "css-loader": "^3.4.0",
     "electron": "^7.1.7",
-    "prettier": "^1.19.1",
+    "prettier": "1.19.1",
     "style-loader": "^1.1.2",
     "webpack": "^4.41.4",
     "webpack-cli": "^3.3.10",
