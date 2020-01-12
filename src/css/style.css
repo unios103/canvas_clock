@@ -1,0 +1,15 @@
+html {
+  -webkit-app-region: drag; /* ドラッグ可能に */
+  -webkit-user-select: none; /* ドラッグはテキスト選択と競合するので禁止 */
+  margin: 0;
+  width: 200px;
+  height: 200px;
+}
+body {
+  margin: 0;
+  width: 200px;
+  height: 200px;
+}
+canvas {
+  position: absolute;
+}

@@ -8,16 +8,20 @@ function createWindow() {
   // メインウィンドウを作成します         //minとmaxの設定を有効にする
   mainWindow = new BrowserWindow({
     titleBarStyle: "hidden",
-    width: 420,
-    height: 300,
-    /*minWidth:830, maxWidth:830, minHeight:600, maxHeight:600,*/ webPreferences: {
+    minWidth: 200,
+    minHeight: 200,
+    maxWidth: 200,
+    maxHeight: 200,
+    webPreferences: {
       nodeIntegration: true
-    }
+    },
+    transparent: true,
+    icon: __dirname + "./img/clock_m.png"
   });
 
   // メインウィンドウに表示するURLを指定します
   // （今回はmain.jsと同じディレクトリのindex.html）
-  mainWindow.loadFile("./dist/index.html");
+  mainWindow.loadFile("./src/index.html");
 
   // デベロッパーツールの起動
   // mainWindow.webContents.openDevTools();
