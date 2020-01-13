@@ -68,7 +68,6 @@ function drawTime() {
   time_canvas.beginPath();
   time_canvas.font = "29px  Cabin Sketch";
   time_canvas.fillText(now(), wids - 14, 135);
-  let t = new Date().getFullYear();
 }
 
 function clearTime() {
