@@ -36,6 +36,96 @@ function draw() {
   Circle(dot("center"), round);
 }
 
+function Circle(circles, func) {
+  for (const c of circles) {
+    cvs.beginPath();
+    func(c);
+    cvs.lineWidth = c.line;
+    cvs.strokeStyle = c.color;
+    cvs.fillStyle = c.fill;
+    cvs.fill();
+    cvs.stroke();
+  }
+}
+
+var round = function(c) {
+  cvs.arc(c.x, c.y, c.radius, rad * 0, rad * 360, true);
+};
+
+var dottedLine = function(c) {
+  for (let r = 0; r < 360; r += 30) {
+    cvs.beginPath();
+    cvs.fillStyle = c.fill;
+    if (r % 90 == 0) {
+      cvs.arc(
+        wid / 2 + c.r * Math.cos(r * rad),
+        wid / 2 + c.r * Math.sin(r * rad),
+        c.round_size + 2,
+        rad * 0,
+        rad * 360,
+        true
+      );
+      cvs.fillStyle = "#DB4D6D";
+    }
+    cvs.arc(
+      wid / 2 + c.r * Math.cos(r * rad),
+      wid / 2 + c.r * Math.sin(r * rad),
+      c.round_size,
+      rad * 0,
+      rad * 360,
+      true
+    );
+    cvs.fill();
+  }
+};
+
+function clockHands(c) {
+  let days = new Date();
+  let hour = days.getHours();
+  let min = days.getMinutes();
+  let sec = days.getSeconds();
+  let mil = days.getMilliseconds();
+  if (c.func === "hour") {
+    hourHands(c, hour, (min / 6) * 10, 30);
+  }
+  if (c.func == "min") {
+    hourHands(c, min, (sec / 6) * 10, 6);
+  }
+  if (c.func == "mil") {
+    hourHands(c, sec, mil / 10, 6);
+  }
+}
+
+function hourHands(c, a, b, h_rad) {
+  let hands = ((a + b / 100) * h_rad - 90) * rad;
+  cvs.moveTo(c.x, c.y);
+  cvs.lineTo(wid / 2 + c.r * Math.cos(hands), wid / 2 + c.r * Math.sin(hands));
+}
+
+function Message(message) {
+  cvs.beginPath();
+  cvs.font = "20px Great Vibes";
+  cvs.fillStyle = "#FEDFE1";
+  if (message == "@unios103") {
+    message_rotate(-25);
+    cvs.fillText(message, 55, 60);
+    message_rotate(25);
+    cvs.stroke();
+  } else if (message == "clock") {
+    cvs.font = "18px Great Vibes";
+    message_rotate(20);
+    cvs.fillText(message, 115, 90);
+    message_rotate(-20);
+    cvs.stroke();
+  }
+}
+
+function message_rotate(rotate) {
+  cvs.translate(200 / 2, 200 / 2);
+  cvs.rotate(rad * rotate);
+  cvs.translate(-200 / 2, -200 / 2);
+}
+
 var dot = function(array) {
   var circles = [],
     center = [],
@@ -113,95 +203,5 @@ var dot = function(array) {
     return false;
   }
 };
-
-function Circle(circles, func) {
-  for (const c of circles) {
-    cvs.beginPath();
-    func(c);
-    cvs.lineWidth = c.line;
-    cvs.strokeStyle = c.color;
-    cvs.fillStyle = c.fill;
-    cvs.fill();
-    cvs.stroke();
-  }
-}
-
-function clockHands(c) {
-  let days = new Date();
-  let hour = days.getHours();
-  let min = days.getMinutes();
-  let sec = days.getSeconds();
-  let mil = days.getMilliseconds();
-  if (c.func === "hour") {
-    hourHands(c, hour, (min / 6) * 10, 30);
-  }
-  if (c.func == "min") {
-    hourHands(c, min, (sec / 6) * 10, 6);
-  }
-  if (c.func == "mil") {
-    hourHands(c, sec, mil / 10, 6);
-  }
-}
-
-function hourHands(c, a, b, h_rad) {
-  let hands = ((a + b / 100) * h_rad - 90) * rad;
-  cvs.moveTo(c.x, c.y);
-  cvs.lineTo(wid / 2 + c.r * Math.cos(hands), wid / 2 + c.r * Math.sin(hands));
-}
-
-var round = function(c) {
-  cvs.arc(c.x, c.y, c.radius, rad * 0, rad * 360, true);
-};
-
-var dottedLine = function(c) {
-  for (let r = 0; r < 360; r += 30) {
-    cvs.beginPath();
-    cvs.fillStyle = c.fill;
-    if (r % 90 == 0) {
-      cvs.arc(
-        wid / 2 + c.r * Math.cos(r * rad),
-        wid / 2 + c.r * Math.sin(r * rad),
-        c.round_size + 2,
-        rad * 0,
-        rad * 360,
-        true
-      );
-      cvs.fillStyle = "#DB4D6D";
-    }
-    cvs.arc(
-      wid / 2 + c.r * Math.cos(r * rad),
-      wid / 2 + c.r * Math.sin(r * rad),
-      c.round_size,
-      rad * 0,
-      rad * 360,
-      true
-    );
-    cvs.fill();
-  }
-};
-
-function Message(message) {
-  cvs.beginPath();
-  cvs.font = "20px Great Vibes";
-  cvs.fillStyle = "#FEDFE1";
-  if (message == "@unios103") {
-    message_rotate(-25);
-    cvs.fillText(message, 55, 60);
-    message_rotate(25);
-    cvs.stroke();
-  } else if (message == "clock") {
-    cvs.font = "18px Great Vibes";
-    message_rotate(20);
-    cvs.fillText(message, 115, 90);
-    message_rotate(-20);
-    cvs.stroke();
-  }
-}
-
-function message_rotate(rotate) {
-  cvs.translate(200 / 2, 200 / 2);
-  cvs.rotate(rad * rotate);
-  cvs.translate(-200 / 2, -200 / 2);
-}
 
 requestAnimFrame(loop);

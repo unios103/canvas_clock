@@ -15,8 +15,7 @@ function createWindow() {
     webPreferences: {
       nodeIntegration: true
     },
-    transparent: true,
-    icon: __dirname + "./img/clock_m.png"
+    transparent: true
   });
 
   // メインウィンドウに表示するURLを指定します
