@@ -1,15 +1,23 @@
 {
   "name": "clock",
   "version": "1.0.0",
-  "main": "clock.js",
+  "main": "index.js",
   "repository": "https://github.com/unios103/canvas_clock.git",
   "author": "unios103 <unios103@gmail.com>",
   "license": "MIT",
-  "dependencies": {
-    "electron": "^7.1.8",
-    "jshint": "^2.11.0-rc1"
+  "scripts": {
+    "build": "electron-builder"
   },
   "devDependencies": {
+    "electron": "^7.1.8",
+    "electron-builder": "^21.2.0",
+    "jshint": "^2.11.0-rc1",
     "prettier": "1.19.1"
+  },
+  "build": {
+    "files": [
+      "./src/**/*",
+      "./index.js"
+    ]
   }
 }

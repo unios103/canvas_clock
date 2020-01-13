@@ -1,5 +1,6 @@
 // アプリケーション作成用のモジュールを読み込み
 const { app, BrowserWindow } = require("electron");
+const { Menu, Tray } = require("electron");
 
 // メインウィンドウ
 let mainWindow;
