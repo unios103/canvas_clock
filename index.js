@@ -1,6 +1,5 @@
 // アプリケーション作成用のモジュールを読み込み
 const { app, BrowserWindow } = require("electron");
-const { Menu, Tray } = require("electron");
 
 // メインウィンドウ
 let mainWindow;
@@ -11,6 +10,8 @@ function createWindow() {
     titleBarStyle: "hidden",
     minWidth: 200,
     minHeight: 200,
+    width: 200,
+    height: 200,
     maxWidth: 200,
     maxHeight: 200,
     webPreferences: {
