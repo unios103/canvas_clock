@@ -11,16 +11,17 @@ window.requestAnimFrame = (function() {
   };
 })();
 
-function loop() {
+const loop = () => {
   requestAnimFrame(loop);
-  canvas = document.getElementById("clock");
-  cvs = canvas.getContext("2d");
   f = new func();
   p = new position();
+  canvas = document.getElementById("clock");
+  f.determineTheSize(canvas);
+  cvs = canvas.getContext("2d");
   draw();
-}
+};
 
-function draw() {
+const draw = () => {
   if (!canvas || !canvas.getContext) {
     return false;
   }
@@ -31,9 +32,9 @@ function draw() {
   Message("@unios103");
   Circle(p.dot("now_time"), clockHands);
   Circle(p.dot("center"), round);
-}
+};
 
-function Circle(circles, func) {
+const Circle = (circles, func) => {
   for (const c of circles) {
     cvs.beginPath();
     func(c);
@@ -43,13 +44,13 @@ function Circle(circles, func) {
     cvs.fill();
     cvs.stroke();
   }
-}
+};
 
-var round = function(c) {
+var round = (c) => {
   cvs.arc(c.x, c.y, c.radius, rad * 0, rad * 360, true);
 };
 
-var dottedLine = function(c) {
+var dottedLine = (c) => {
   for (let r = 0; r < 360; r += 30) {
     cvs.beginPath();
     cvs.fillStyle = c.fill;
@@ -76,7 +77,7 @@ var dottedLine = function(c) {
   }
 };
 
-function clockHands(c) {
+const clockHands = (c) => {
   let days = new Date();
   let hour = days.getHours();
   let min = days.getMinutes();
@@ -91,9 +92,9 @@ function clockHands(c) {
   if (c.func == "mil") {
     f.hourHands(c, sec, mil / 10, 6);
   }
-}
+};
 
-function Message(message) {
+const Message = (message) => {
   cvs.beginPath();
   cvs.font = "20px Great Vibes";
   cvs.fillStyle = "#FEDFE1";
@@ -109,6 +110,6 @@ function Message(message) {
     f.rotate(-20);
     cvs.stroke();
   }
-}
+};
 
 requestAnimFrame(loop);

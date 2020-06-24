@@ -14,10 +14,11 @@ window.requestAnimFrame = (function() {
 
 function loop_time() {
   requestAnimFrame(loop_time);
-  time = document.getElementById("time");
-  time_canvas = time.getContext("2d");
   f = new func();
   p = new position();
+  time = document.getElementById("time");
+  f.determineTheSize(time);
+  time_canvas = time.getContext("2d");
   checkEvent();
   monitoring();
 }
