@@ -24,9 +24,14 @@ function func() {
   this.determineTheSize = (canvas) => {
     const height = window.innerHeight;
     const width = window.innerWidth;
-    canvas.width = width * devicePixelRatio;
-    canvas.height = height * devicePixelRatio;
+    const minSize = height > width ? width : height;
+    canvas.width = minSize * devicePixelRatio;
+    canvas.height = minSize * devicePixelRatio;
     canvas.style.width = String(canvas.width / devicePixelRatio) + "px";
     canvas.style.height = String(canvas.height / devicePixelRatio) + "px";
+  };
+
+  this.multiplyByPixel = (num) => {
+    return num * devicePixelRatio;
   };
 }

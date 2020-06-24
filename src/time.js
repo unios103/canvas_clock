@@ -1,6 +1,6 @@
 var time,
   time_canvas,
-  wids = 120,
+  wids = 120 * devicePixelRatio,
   p,
   f,
   flag = false;
@@ -23,7 +23,7 @@ function loop_time() {
   monitoring();
 }
 
-function checkEvent() {
+const checkEvent = () => {
   time.addEventListener(
     "mouseover",
     function() {
@@ -38,9 +38,9 @@ function checkEvent() {
     },
     false
   );
-}
+};
 
-function monitoring() {
+const monitoring = () => {
   let time_watching = new Date().getSeconds();
   if (flag) {
     drawTime();
@@ -53,24 +53,24 @@ function monitoring() {
       drawTime();
     }
   }
-}
+};
 
-function drawTime() {
-  time_canvas.clearRect(0, 0, 200, 200);
+const drawTime = () => {
+  time_canvas.clearRect(0, 0, wid, wid);
   time_canvas.beginPath();
-  time_canvas.font = "16px  Cabin Sketch";
+  time_canvas.font = "32px  Cabin Sketch";
   time_canvas.fillStyle = "#FEDFE1";
   f.shadow(2, 2, 2, "#B1969399");
-  time_canvas.fillText(p.day(), wids - 101, 135);
+  time_canvas.fillText(p.day(), wids - 185, 270);
   time_canvas.fill();
   time_canvas.beginPath();
-  time_canvas.font = "29px  Cabin Sketch";
-  time_canvas.fillText(p.now(), wids - 16.5, 135);
-}
+  time_canvas.font = "58px  Cabin Sketch";
+  time_canvas.fillText(p.now(), wids - 20, 270);
+};
 
 function clearTime() {
   f.shadow(0, 0, 0, "#0000");
-  time_canvas.clearRect(0, 0, 200, 200);
+  time_canvas.clearRect(0, 0, wid, wid);
 }
 
 requestAnimFrame(loop_time);

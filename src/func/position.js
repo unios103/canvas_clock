@@ -1,12 +1,13 @@
 function position() {
-  this.day = function() {
+  this.day = () => {
     let today = new Date();
     let date = today.getFullYear();
     date += "." + today.getMonth() + 1;
     date += "." + today.getDate();
     return date;
   };
-  this.now = function() {
+
+  this.now = () => {
     let today = new Date();
     let now = today.getHours();
     if (now / 10 < 1) {
@@ -20,7 +21,8 @@ function position() {
     }
     return now;
   };
-  this.dot = function(array) {
+
+  this.dot = (array) => {
     var circles = [],
       center = [],
       dotted = [],
@@ -29,60 +31,60 @@ function position() {
       x: wid / 2,
       y: wid / 2,
       radius: wid / 2 - 2,
-      line: 5,
+      line: 10,
       color: "#0000",
-      fill: "#2A2A2A"
+      fill: "#2A2A2A",
     });
     circles.push({
       x: wid / 2,
       y: wid / 2,
-      radius: wid / 2 - 7,
-      line: 1.5,
+      radius: wid / 2 - 14,
+      line: 3,
       color: "#FEDFE1",
-      fill: "#0000"
+      fill: "#0000",
     });
     center.push({
       x: wid / 2,
       y: wid / 2,
       radius: 3.5,
-      line: 1.5,
+      line: 10,
       color: "#FFF",
-      fill: "#FFF"
+      fill: "#FFF",
     });
     dotted.push({
-      r: wid / 2 - 17.5,
+      r: wid / 2 - 35,
       fill: "#FEDFE1",
-      round_size: 4
+      round_size: 8,
     });
     clock_time.push({
-      r: wid / 2 - 45,
+      r: wid / 2 - 90,
       color: "#FFF",
       fill: "#FFF",
       round_size: 3,
       x: wid / 2,
       y: wid / 2,
-      line: 4,
-      func: "hour"
+      line: 8,
+      func: "hour",
     });
     clock_time.push({
-      r: wid / 2 - 30,
+      r: wid / 2 - 60,
+      color: "#FFF",
+      fill: "#FFF",
+      round_size: 3,
+      x: wid / 2,
+      y: wid / 2,
+      line: 6,
+      func: "min",
+    });
+    clock_time.push({
+      r: wid / 2 - 40,
       color: "#FFF",
       fill: "#FFF",
       round_size: 3,
       x: wid / 2,
       y: wid / 2,
       line: 3,
-      func: "min"
-    });
-    clock_time.push({
-      r: wid / 2 - 20,
-      color: "#FFF",
-      fill: "#FFF",
-      round_size: 3,
-      x: wid / 2,
-      y: wid / 2,
-      line: 1.5,
-      func: "mil"
+      func: "mil",
     });
     if (array === "circle") {
       return circles;

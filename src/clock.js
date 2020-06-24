@@ -2,7 +2,7 @@ var canvas,
   cvs,
   p,
   f,
-  wid = 200;
+  wid = 200 * devicePixelRatio;
 var rad = Math.PI / 180;
 
 window.requestAnimFrame = (function() {
@@ -58,7 +58,7 @@ var dottedLine = (c) => {
       cvs.arc(
         wid / 2 + c.r * Math.cos(r * rad),
         wid / 2 + c.r * Math.sin(r * rad),
-        c.round_size + 2,
+        c.round_size + 2 * devicePixelRatio,
         rad * 0,
         rad * 360,
         true
@@ -96,17 +96,17 @@ const clockHands = (c) => {
 
 const Message = (message) => {
   cvs.beginPath();
-  cvs.font = "20px Great Vibes";
+  cvs.font = "40px Great Vibes";
   cvs.fillStyle = "#FEDFE1";
   if (message == "@unios103") {
     f.rotate(-25);
-    cvs.fillText(message, 55, 60);
+    cvs.fillText(message, 40 * devicePixelRatio, 78 * devicePixelRatio);
     f.rotate(25);
     cvs.stroke();
   } else if (message == "clock") {
-    cvs.font = "18px Great Vibes";
+    cvs.font = "36px Great Vibes";
     f.rotate(20);
-    cvs.fillText(message, 115, 90);
+    cvs.fillText(message, 135 * devicePixelRatio, 65 * devicePixelRatio);
     f.rotate(-20);
     cvs.stroke();
   }
